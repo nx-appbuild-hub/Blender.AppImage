@@ -1,5 +1,5 @@
-SOURCE="https://ftp.halifax.rwth-aachen.de/blender/release/Blender2.82/blender-2.82-linux64.tar.xz"
-DESTINATION="build.tar.xz"
+SOURCE="https://download.blender.org/release/Blender2.79/blender-2.79b-linux-glibc219-x86_64.tar.bz2"
+DESTINATION="build.tar.bz2"
 OUTPUT="Blender.AppImage"
 
 
@@ -8,7 +8,7 @@ all:
 	wget --output-document=$(DESTINATION) --continue $(SOURCE)
 
 	mkdir -p build
-	tar -xJf $(DESTINATION) --directory build
+	tar -xvf $(DESTINATION) --directory build
 
 	mkdir --parents AppDir/opt/application
 	cp -r build/blender-*/* AppDir/opt/application
